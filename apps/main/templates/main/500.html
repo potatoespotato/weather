@@ -1,0 +1,39 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap&subset=cyrillic"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/dist/css/all.css' %}">
+    <title>Page Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<body>
+<script>
+    let scene = document.getElementById('scene');
+    let parallaxInstance = new Parallax(scene, {
+        relativeInput: true
+    });
+</script>
+<div class="handler__container" style="background-image:url( {% static 'main/img/404/404.png' %})">
+
+        <div class="handler__content">
+            <h1 class="handler__title">Что-то пошло не так...</h1>
+            <div class="handler__text">
+                <span class="handler__letter">5</span>
+                <span class="handler__letter">0</span>
+                <span class="handler__letter">0</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+<!-- IE needs 512+ bytes: https://blogs.msdn.microsoft.com/ieinternals/2010/08/18/friendly-http-error-pages/ -->

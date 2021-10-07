@@ -1,0 +1,47 @@
+{% load static %}
+{% load dseo_tags %}
+{% load favtags %}
+<!DOCTYPE HTML>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+
+    {% block meta %}
+        {% if page %}
+            {% get_meta page %}
+        {% endif %}
+    {% endblock %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% block extra_css %}{% endblock %}
+    {% placeFavicon %}
+
+    <link rel="stylesheet" href="{% static 'main/dist/css/all.css' %}">
+    <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+    <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+        your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+
+    {% block header %}
+
+    {% endblock header %}
+
+    {% block content %}
+
+    {% endblock content %}
+
+    {% block footer %}
+    {% endblock footer %}
+    <script src="{% static 'main/dist/js/all.js' %}"></script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

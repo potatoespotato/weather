@@ -1,0 +1,39 @@
+[tool.black]
+line-length = 79
+target-version = ['py38']
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \docker
+    | migrations
+    | \conf.d
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/           # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''
+
+[flake8]
+use_class_attributes_order_strict_mode = True
+class_attributes_order =
+    __new__,
+    __init__,
+    field,
+    meta_class,
+    __str__,
+    nested_class,
+    magic_method,
+    property_method,
+    static_method,
+    class_method,
+    method,
+    private_method

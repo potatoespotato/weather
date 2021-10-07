@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+
+  weather-redis:
+    image: redis:5-alpine
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - weather-redis_data:/data
+
+  weather-django:
+    build:
+      context: ../
+      dockerfile: docker/base/local/django/Dockerfile
+    image: weather-django:dev
+    restart: unless-stopped
+    env_file:
+      - ../weather/settings/.env
+    command:
+      python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ../:/src
+    ports:
+      - 8012:8000
+    depends_on:
+      - weather-redis
+
+volumes:
+  weather-redis_data:

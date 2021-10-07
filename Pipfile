@@ -1,0 +1,53 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+django-debug-toolbar="*"
+pylint = "*"
+pylint-django = "*"
+pylint-celery = "*"
+flake8 = "*"
+black = "==19.10b0"
+pycodestyle = "*"
+pyflakes = "*"
+pylint-plugin-utils = "*"
+isort = "*"
+jedi = "*"
+pre-commit = "*"
+
+[packages]
+django = "==3.0.4"
+asgiref = "==3.2.3"
+boto3 = "==1.11.9"
+celery = {extras = ["redis"],version = "*"}
+django-anymail = {extras = ["amazon_ses"],version = "*"}
+redis = "==3.3.11"
+django-autoslug= "*"
+django-baton = "*"
+django-cacheops = "*"
+django-ckeditor= "*"
+django-cleanup= "*"
+django-debug-toolbar= "*"
+django-environ= "*"
+django-favicon-plus= "*"
+django-redis= "==4.11.0"
+django-solo= "*"
+django-split-settings = "*"
+django-storages= "*"
+django-versatileimagefield = "*"
+django-widget-tweaks= "*"
+djangorestframework= "*"
+dmodels= "==0.1.dev0"
+factory-boy= "*"
+gunicorn= "*"
+ipython= "*"
+pip = "*"
+psycopg2-binary= "*"
+sentry-sdk= "==0.14.1"
+wheel = "==0.34.2"
+response = "*"
+
+[requires]
+python_version = "3.8"
